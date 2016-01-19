@@ -1,3 +1,4 @@
+import java.io.PrintStream;
 import java.util.Date;
 
 /**
@@ -6,7 +7,13 @@ import java.util.Date;
  * @author Jordi Anguela (janguela)
  */
 public class PrintDate {
+	PrintStream printStream;
+
+	public PrintDate(PrintStream printStream) {
+		this.printStream = printStream;
+	}
+
 	public void printCurrentDate() {
-		System.out.println(new Date());
+		printStream.println(new Date());
 	}
 }

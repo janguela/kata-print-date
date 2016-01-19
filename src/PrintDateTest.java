@@ -1,3 +1,5 @@
+import java.io.PrintStream;
+
 import org.junit.Test;
 
 /**
@@ -7,7 +9,8 @@ public class PrintDateTest {
 
 	@Test
 	public void printDate() throws Exception {
-		PrintDate printDate = new PrintDate();
+		PrintStream printStream = System.out;
+		PrintDate printDate = new PrintDate(printStream);
 		printDate.printCurrentDate();
 		// How can we test this function?
 	}
