@@ -1,4 +1,6 @@
-import java.io.PrintStream;
+import static org.junit.Assert.assertTrue;
+
+import java.util.Date;
 
 import org.junit.Test;
 
@@ -8,10 +10,13 @@ import org.junit.Test;
 public class PrintDateTest {
 
 	@Test
-	public void printDate() throws Exception {
-		PrintStream printStream = System.out;
+	public void printDate_prints_current_date_tested_with_stub() throws Exception {
+		SysoutStub printStream = new SysoutStub("tmp/tmp.txt");
 		PrintDate printDate = new PrintDate(printStream);
 		printDate.printCurrentDate();
-		// How can we test this function?
+
+		Date printedDate = (Date) printStream.lastPrintedObject();
+		Date now = new Date();
+		assertTrue(now.equals(printedDate));
 	}
 }
