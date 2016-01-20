@@ -43,7 +43,8 @@ public class PrintDateTest {
 
 		// 4. verify expectations - Verify that correct methods has been invoked
 		// in mock
-		assertTrue(printStream.printlnHasBeenCalled());
+		Date now = new Date();
+		assertTrue(printStream.printlnHasBeenCalledWith(now));
 
 		// 5. verify state
 
